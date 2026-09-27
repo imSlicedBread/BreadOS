@@ -1,0 +1,9 @@
+[package]
+name = "breados-loader"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+breados-boot.workspace = true
+uefi = { version = "=0.40.0", features = ["alloc", "global_allocator", "panic_handler"] }

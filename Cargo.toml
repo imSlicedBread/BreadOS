@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = ["crates/boot-protocol", "crates/desktop", "loader", "kernel", "xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "UNLICENSED"
+
+[workspace.dependencies]
+breados-boot = { path = "crates/boot-protocol", default-features = false }
+breados-desktop = { path = "crates/desktop", default-features = false }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+strip = false
